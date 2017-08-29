@@ -2,7 +2,9 @@ FROM evarga/jenkins-slave
  
 # remove openjdk 
 RUN apt remove -y openjdk*
-RUN apt install -y tar
+
+RUN apt-get update
+RUN apt-get install -y tar
 
 RUN wget --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz  && \
